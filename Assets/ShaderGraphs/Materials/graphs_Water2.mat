@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: graphs_BaseWater
-  m_Shader: {fileID: 4800000, guid: 65fbe1fae6a3f7940bfb5d07896e2de7, type: 3}
+  m_Name: graphs_Water2
+  m_Shader: {fileID: 4800000, guid: ced8e9e768984894bb09df9cdb89c386, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,16 +18,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture_57515B15:
-        m_Texture: {fileID: 2800000, guid: 3029606d93df80644bb1fe3d96e30559, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture_9FBCBD1D:
+    - Texture_3C1A3534:
         m_Texture: {fileID: 2800000, guid: 3f8ff35b063869340a44488288952e02, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture_9B410BB0:
+        m_Texture: {fileID: 2800000, guid: 3029606d93df80644bb1fe3d96e30559, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2ACFE751: 3.93
+    - Vector1_D34509E0: 0.5
     m_Colors:
-    - Color_768EBAD8: {r: 0.4433962, g: 0.23215556, b: 0.29771298, a: 0}
-    - Vector4_54F2903A: {r: 0.57, g: 0.2, b: 0.3, a: 0.5}
+    - Color_F792FBE5: {r: 0.3018868, g: 0.26628694, b: 0.26628694, a: 0}
+    - Vector4_5E45CB54: {r: 0.02, g: -0.03, b: 0, a: 0.03}
