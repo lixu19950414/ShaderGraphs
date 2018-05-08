@@ -18,8 +18,23 @@ float FresnelReflectanceSafe(float3 RF0, float NoL)
 
 float IORToRF0(float n)
 {
-	float t = (n - 1) / (n + 1);
+	float t = (n - 1.0) / (n + 1.0);
 	float RF0 = t * t;
 	return RF0;
 }
+
+float RF0ToIOR(float RF0)
+{
+	float t = sqrt(RF0);
+	float IOR = (1.0 + t) / (1.0 - t);
+	return IOR;
+}
+
+float SinOfTotalInternalReflection(float RF0)
+{
+	float t = sqrt(RF0);
+	float sine = (1.0 - t) / (1.0 + t);
+	return sine;
+}
+
 
