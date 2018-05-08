@@ -1,4 +1,6 @@
 // Insulators' RF0s
+float3 RF0_INSULATOR_LINEAR = float3(0.05, 0.05, 0.05);
+float3 RF0_INSULATOR_SRGB = float3(0.24, 0.24, 0.24);
 float3 RF0_WATER_LINEAR = float3(0.02, 0.02, 0.02);
 float3 RF0_WATER_SRGB = float3(0.15, 0.15, 0.15);
 float3 RF0_PLASTIC_LINEAR = float3(0.03, 0.03, 0.03);
