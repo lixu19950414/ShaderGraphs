@@ -1,3 +1,4 @@
+// Fresnel terms
 float FresnelReflectance(float RF0, float NoH)
 {
 	float t = 1.0 - NoH;
@@ -7,7 +8,7 @@ float FresnelReflectance(float RF0, float NoH)
 	return r;
 }
 
-float FresnelReflectanceSafe(float3 RF0, float NoH)
+float FresnelReflectance(float3 RF0, float NoH)
 {
 	float t = 1.0 - NoH;
 	float t2 = t * t;
@@ -37,4 +38,49 @@ float SinOfTotalInternalReflection(float RF0)
 	return sine;
 }
 
+// Visibility terms (Shadowling and Masking)
+float BlinnPhongVisibility(float NoL, float NoV)
+{
+	float visibility = NoL * NoV;
+	return visibility;
+}
+
+float WardVisibility(float NoL, float NoV)
+{
+	float visibility = 1.0 / (NoL * NoV);
+	return visibility;
+}
+
+float NeumannVisibility(float NoL, float NoV)
+{
+	float visibility = 1.0 / max(NoL, NoV);
+	return visibility;
+}
+
+float AshikhminShirleyVisibility(float NoL, float NoV, float LoH)
+{
+	float visibility = 1.0 / (LoH * max(NoL, NoV));
+	return visibility;
+}
+
+float AshikhminPremozeVisibility(float NoL, float NoV)
+{
+	float visibility = 1.0 / (NoL + NoV - NoL * NoV);
+	return visibility;
+}
+
+
+// BRDFs
+
+half3 NormalizedBlinnPhongBRDF(half3 diffColor, half3 specColor, float NoH, float NDF)
+{
+	half3 specular = (NDF + 8.0) / 8.0 * specColor * pow(NoH, NDF);
+	return 0.31830988618 * (diffColor + specular);
+}
+
+half3 BlinnPhongBRDF(half3 diffColor, half3 specColor, float NoH, float NDF)
+{
+	half3 specular = specColor * pow(NoH, NDF);
+	return diffColor + specular;
+}
 
